@@ -1,5 +1,6 @@
 Security Risk Escalation API Documentation
 Overview
+
 The Security Risk Escalation API allows users to assess, adjust, and remove security risks in an organization. It helps manage vulnerabilities and take appropriate actions by enabling users to submit risk assessments, retrieve details of existing risks, and escalate or address identified issues.
 
 Base URL
@@ -50,7 +51,10 @@ Copy code
 403 Forbidden: This error occurs if the API key does not have the necessary permissions to access the requested resource.
 
 Endpoints
+
+
 1. Create a New Risk Assessment
+
 URL: /api/risk_assessments
 Method: POST
 Description: Allows users to submit a new risk assessment.
@@ -64,7 +68,10 @@ Copy code
   "date_reported": "2024-12-10T10:00:00Z",
   "reported_by": "John Doe"
 }
+
+
 Response:
+
 json
 Copy code
 {
@@ -76,7 +83,10 @@ Copy code
 }
 Errors:
 400 Bad Request: Missing or invalid fields.
+
+
 2. Get Risk Assessment
+
 URL: /api/risk_assessments/{risk_id}
 Method: GET
 Description: Retrieves a specific risk assessment by its ID.
@@ -93,6 +103,8 @@ Copy code
   "reported_by": "John Doe",
   "date_reported": "2024-12-10T10:00:00Z"
 }
+
+
 Errors:
 404 Not Found: Risk assessment not found.
 401 Unauthorized: Missing or invalid API key.
@@ -110,6 +122,7 @@ Copy code
   "severity": "medium",
   "status": "closed"
 }
+
 Response:
 json
 Copy code
@@ -120,9 +133,13 @@ Copy code
   "status": "closed",
   "reported_by": "John Doe"
 }
+
+
 Errors:
 400 Bad Request: Invalid or missing fields.
 404 Not Found: Risk assessment not found.
+
+
 4. Delete Risk Assessment
 URL: /api/risk_assessments/{risk_id}
 Method: DELETE
